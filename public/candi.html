@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Candi — Ensiklopedia Muaro Jambi</title>
+    <meta name="description" content="Halaman detail candi — sejarah, arsitektur, fakta, dan lokasi candi dalam Kompleks Percandian Muaro Jambi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ── Navigasi ── -->
+    <nav class="navbar">
+        <a class="nav-brand" href="index.html">✦ Muaro Jambi</a>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" class="nav-link">Beranda</a>
+            <div class="nav-dropdown" id="nav-dropdown">
+                <button class="nav-link nav-dd-btn active" id="dd-toggle" aria-expanded="false">
+                    Candi <span class="dd-chevron">▾</span>
+                </button>
+                <div class="nav-dd-panel" id="dd-panel">
+                    <a href="kompleks.html" class="dd-overview">
+                        <span class="dd-overview-icon">◈</span>
+                        <span>Seluruh Kompleks Muaro Jambi</span>
+                        <span class="dd-overview-arrow">→</span>
+                    </a>
+                    <div class="dd-divider"></div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Percandian Utama</span>
+                        <a href="candi.html?id=candi-tinggi"      class="dd-item">Candi Tinggi</a>
+                        <a href="candi.html?id=candi-gumpung"     class="dd-item">Candi Gumpung</a>
+                        <a href="candi.html?id=candi-kedaton"     class="dd-item">Candi Kedaton</a>
+                        <a href="candi.html?id=candi-kembar-batu" class="dd-item">Candi Kembar Batu</a>
+                    </div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Percandian Selatan</span>
+                        <a href="candi.html?id=gedong-1"          class="dd-item">Candi Gedong I</a>
+                        <a href="candi.html?id=gedong-2"          class="dd-item">Candi Gedong II</a>
+                        <a href="candi.html?id=candi-astano"      class="dd-item">Candi Astano</a>
+                    </div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Kawasan Utara</span>
+                        <a href="candi.html?id=koto-mahligai"     class="dd-item">Koto Mahligai</a>
+                        <a href="candi.html?id=telago-rajo"       class="dd-item">Telago Rajo</a>
+                    </div>
+                </div>
+            </div>
+            <a href="news.html" class="nav-link">Berita</a>
+            <a href="repository.html" class="nav-link">Repositori</a>
+            <a href="#tentang" class="nav-link">Tentang</a>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Buka menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <button id="theme-toggle" class="btn-theme-toggle" title="Ganti Tema">
+            <span id="theme-icon">☀</span>
+        </button>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- ── Temple Hero ── -->
+    <section class="temple-hero" id="temple-hero">
+        <div class="temple-hero-img-wrap">
+            <img id="hero-img" src="" alt="">
+        </div>
+        <div class="temple-hero-overlay">
+            <div class="temple-hero-inner">
+                <div class="temple-meta" id="hero-meta"></div>
+                <h1 class="temple-hero-title" id="hero-title">Memuat…</h1>
+                <p class="temple-hero-short" id="hero-short"></p>
+                <div style="margin-top:4px;">
+                    <a id="hero-maps-link" href="#" target="_blank" rel="noopener noreferrer"
+                       class="btn-hero-secondary" style="font-size:.74rem;padding:9px 22px;text-decoration:none;display:inline-flex;gap:6px;align-items:center;">
+                        📍 Buka Google Maps <span>↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Detail Layout (2 kolom) ── -->
+    <div class="temple-detail-layout" id="detail-layout">
+
+        <!-- Kolom utama: paragraf + peta -->
+        <main class="temple-main-col scroll-anim">
+            <div class="temple-paragraphs" id="temple-paragraphs"></div>
+
+            <div class="temple-map-card">
+                <h3 class="section-sub-heading">📍 Peta Lokasi</h3>
+                <div class="map-frame-wrap">
+                    <iframe id="temple-map"
+                        width="100%" height="320" style="border:0;"
+                        loading="lazy" allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="about:blank" title="Peta Lokasi Candi">
+                    </iframe>
+                </div>
+                <a id="temple-maps-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-maps">
+                    🗺 Buka di Google Maps ↗
+                </a>
+            </div>
+        </main>
+
+        <!-- Sidebar: data singkat -->
+        <aside class="temple-sidebar-col scroll-anim" style="--anim-delay:.15s">
+            <div class="facts-card">
+                <h3 class="facts-card-title">⬡ Data Singkat</h3>
+                <dl class="facts-list" id="facts-list"></dl>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- ── Candi Lainnya dalam Kompleks ── -->
+    <section class="related-section" id="related-section">
+        <div class="related-inner">
+            <h2 class="related-heading">✦ Candi Lainnya dalam Kompleks</h2>
+            <div class="related-grid" id="related-grid"></div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer id="tentang" class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-about">
+                <h3 class="footer-logo">✦ Ensiklopedia Muaro Jambi</h3>
+                <p>Platform ensiklopedia digital yang mendedikasikan diri untuk melestarikan dan menyebarluaskan pengetahuan tentang Kompleks Percandian Muaro Jambi — warisan peradaban Buddha terbesar di Asia Tenggara yang berada di bumi Jambi, Indonesia.</p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-creators">
+                <h4 class="footer-section-title">Pengembang &amp; Perancang</h4>
+                <div class="ig-links">
+                    <a class="ig-link" href="https://www.instagram.com/ryuji_sakamoto19/" target="_blank" rel="noopener noreferrer">
+                        <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        @ryuji_sakamoto19
+                    </a>
+                    <a class="ig-link" href="https://www.instagram.com/heran_log/" target="_blank" rel="noopener noreferrer">
+                        <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        @heran_log
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Ensiklopedia Muaro Jambi · Dibuat dengan ❤ untuk melestarikan warisan budaya Indonesia</p>
+                <div class="footer-nav">
+                    <a href="index.html">Beranda</a>
+                    <a href="kompleks.html">Seluruh Kompleks</a>
+                    <a href="news.html">Berita</a>
+                    <a href="repository.html">Repositori</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── AI Agent Widget ── -->
+    <div id="ai-widget" class="chat-closed">
+        <button class="ai-bubble-btn" onclick="toggleChat()" aria-label="AI Pemandu Muaro Jambi">
+            <span class="ai-bubble-icon">✦</span>
+            <span class="ai-bubble-ring"></span>
+        </button>
+        <div class="ai-header" onclick="toggleChat()">
+            ✦ AI Pemandu Muaro Jambi ✦
+            <button class="ai-clear-btn" onclick="event.stopPropagation();clearChat()" title="Hapus riwayat">✕</button>
+        </div>
+        <div class="ai-body" id="chat-box">
+            <div class="message bot">Halo! Saya AI Pemandu. Ada yang ingin kamu tanyakan tentang candi ini?</div>
+        </div>
+        <div class="ai-suggestions">
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Sejarah candi ini?</button>
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Fungsi & ritual?</button>
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Arsitektur bata merah?</button>
+        </div>
+        <div class="ai-input" id="chat-input">
+            <input type="text" id="user-input" placeholder="Tanya tentang candi ini..." maxlength="400">
+            <button>Kirim</button>
+        </div>
+    </div>
+
+    <script src="js/temples-data.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+    (function initCandiPage() {
+        'use strict';
+        const params = new URLSearchParams(location.search);
+        const id     = params.get('id');
+        const t      = getTempleById(id);
+
+        // Redirect ke beranda bila ID tidak dikenal
+        if (!t) { location.replace('index.html'); return; }
+
+        /* ── Judul halaman ── */
+        document.title = t.name + ' — Ensiklopedia Muaro Jambi';
+        document.getElementById('page-title').textContent = document.title;
+
+        /* ── Hero ── */
+        const heroImg = document.getElementById('hero-img');
+        const lastResort = 'img/kompleks.jpg';
+        const fb = t.imageFallback || lastResort;
+        heroImg.onerror = function() {
+            this.onerror = function() { this.onerror = null; this.src = lastResort; };
+            this.src = fb;
+        };
+        heroImg.src = t.image;
+        heroImg.alt = t.name;
+
+        document.getElementById('hero-title').textContent = t.name;
+        document.getElementById('hero-short').textContent = t.shortDesc;
+        document.getElementById('hero-maps-link').href    = t.mapLink;
+
+        /* ── Meta tags ── */
+        const relClass = 'religion-' + t.religion;
+        document.getElementById('hero-meta').innerHTML =
+            '<span class="meta-tag">' + t.era + '</span>' +
+            '<span class="meta-tag ' + relClass + '">' + t.religionLabel + '</span>' +
+            '<span class="meta-tag">' + t.kingdom + '</span>' +
+            '<span class="meta-tag">◈ ' + t.zone + '</span>';
+
+        /* ── Paragraf ── */
+        document.getElementById('temple-paragraphs').innerHTML =
+            t.paragraphs.map(function(p) { return '<p>' + p + '</p>'; }).join('');
+
+        /* ── Peta ── */
+        var mapSrc = 'https://maps.google.com/maps?q=' + t.mapQuery + '&t=h&z=14&ie=UTF8&iwloc=&output=embed';
+        document.getElementById('temple-map').src    = mapSrc;
+        document.getElementById('temple-maps-btn').href = t.mapLink;
+
+        /* ── Data singkat ── */
+        var factRows = '';
+        Object.keys(t.facts).forEach(function(k) {
+            factRows +=
+                '<div class="fact-row">' +
+                    '<dt class="fact-term">' + k + '</dt>' +
+                    '<dd class="fact-def">' + t.facts[k] + '</dd>' +
+                '</div>';
+        });
+        document.getElementById('facts-list').innerHTML = factRows;
+
+        /* ── Tandai item aktif di dropdown ── */
+        document.querySelectorAll('.dd-item').forEach(function(a) {
+            var href = a.getAttribute('href');
+            if (href && href.indexOf('id=' + id) !== -1) {
+                a.classList.add('active');
+            }
+        });
+
+        /* ── Candi terkait (semua kecuali yang sedang dibuka, maks 4) ── */
+        var related = TEMPLES.filter(function(x) {
+            return x.id !== id;
+        }).slice(0, 4);
+
+        var relSection = document.getElementById('related-section');
+        if (related.length === 0) {
+            relSection.style.display = 'none';
+        } else {
+            document.getElementById('related-grid').innerHTML = related.map(function(r, i) {
+                var d = (i * 0.1).toFixed(1) + 's';
+                var fallback = r.imageFallback || lastResort;
+                var onerror = "this.onerror=function(){this.onerror=null;this.src='" + lastResort + "'};this.src='" + fallback + "'";
+                return '<a class="related-card scroll-anim" style="--anim-delay:' + d + '" href="candi.html?id=' + r.id + '">' +
+                    '<div class="related-img-wrap">' +
+                        '<img src="' + r.image + '" alt="' + r.name + '" loading="lazy" onerror="' + onerror + '">' +
+                    '</div>' +
+                    '<div class="related-info">' +
+                        '<span class="related-era">' + r.era + '</span>' +
+                        '<h4 class="related-name">' + r.name + '</h4>' +
+                        '<p class="related-desc">' + r.shortDesc + '</p>' +
+                    '</div>' +
+                '</a>';
+            }).join('');
+        }
+
+        /* ── Trigger hero animations after content is set ── */
+        document.querySelector('.temple-hero-inner').classList.add('hero-content-loaded');
+
+        /* ── Register all newly injected scroll-anim elements ── */
+        if (window.reinitScrollAnim) window.reinitScrollAnim();
+    })();
+    </script>
+</body>
+</html>

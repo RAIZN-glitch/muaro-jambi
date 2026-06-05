@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita &amp; Informasi Terkini — Ensiklopedia Muaro Jambi</title>
+    <meta name="description" content="Berita dan informasi terkini tentang Kompleks Percandian Muaro Jambi — nominasi UNESCO, pemugaran, acara wisata budaya, dan penemuan arkeologi terbaru.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ══ NAVIGASI ══ -->
+    <nav class="navbar">
+        <a class="nav-brand" href="index.html">✦ Muaro Jambi</a>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" class="nav-link">Beranda</a>
+            <div class="nav-dropdown" id="nav-dropdown">
+                <button class="nav-link nav-dd-btn" id="dd-toggle" aria-expanded="false">
+                    Candi <span class="dd-chevron">▾</span>
+                </button>
+                <div class="nav-dd-panel" id="dd-panel">
+                    <a href="kompleks.html" class="dd-overview">
+                        <span class="dd-overview-icon">◈</span>
+                        <span>Seluruh Kompleks Muaro Jambi</span>
+                        <span class="dd-overview-arrow">→</span>
+                    </a>
+                    <div class="dd-divider"></div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Percandian Utama</span>
+                        <a href="candi.html?id=candi-tinggi"      class="dd-item">Candi Tinggi</a>
+                        <a href="candi.html?id=candi-gumpung"     class="dd-item">Candi Gumpung</a>
+                        <a href="candi.html?id=candi-kedaton"     class="dd-item">Candi Kedaton</a>
+                        <a href="candi.html?id=candi-kembar-batu" class="dd-item">Candi Kembar Batu</a>
+                    </div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Percandian Selatan</span>
+                        <a href="candi.html?id=gedong-1"          class="dd-item">Candi Gedong I</a>
+                        <a href="candi.html?id=gedong-2"          class="dd-item">Candi Gedong II</a>
+                        <a href="candi.html?id=candi-astano"      class="dd-item">Candi Astano</a>
+                    </div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Kawasan Utara</span>
+                        <a href="candi.html?id=koto-mahligai"     class="dd-item">Koto Mahligai</a>
+                        <a href="candi.html?id=telago-rajo"       class="dd-item">Telago Rajo</a>
+                    </div>
+                </div>
+            </div>
+            <a href="news.html" class="nav-link active">Berita</a>
+            <a href="repository.html" class="nav-link">Repositori</a>
+            <a href="#tentang" class="nav-link">Tentang</a>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Buka menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <button id="theme-toggle" class="btn-theme-toggle" title="Ganti Tema">
+            <span id="theme-icon">☀</span>
+        </button>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- ══ PAGE HEADER ══ -->
+    <header class="page-header">
+        <span class="page-header-label">✦ Kompleks Percandian Muaro Jambi</span>
+        <h1>Berita &amp; Informasi Terkini</h1>
+        <p>Perkembangan terbaru seputar UNESCO, pemugaran, wisata budaya, dan penemuan arkeologi</p>
+        <span class="header-ornament">◆ · · · ◆ · · · ◆</span>
+    </header>
+
+    <!-- ══ NEWS GRID ══ -->
+    <section class="island-section">
+
+        <div class="island-header scroll-anim">
+            <div class="island-title-wrap">
+                <span class="island-badge">Berita Pilihan</span>
+                <h2 class="island-title">Informasi Terkini</h2>
+            </div>
+            <p style="color:var(--fg-dim);font-size:.9rem;margin:0;">4 berita terbaru · 2026</p>
+        </div>
+
+        <div class="container">
+
+            <!-- ── Kartu 1: UNESCO ── -->
+            <article class="card scroll-anim" style="--anim-delay:0s">
+                <div style="position:relative;overflow:hidden;">
+                    <img src="img/kompleks.jpg"
+                         alt="Nominasi UNESCO Candi Muaro Jambi"
+                         loading="lazy"
+                         onerror="this.src='img/kompleks-2.jpg'">
+                    <span style="position:absolute;top:.7rem;left:.7rem;background:var(--gold);color:var(--fg-on-gold);font-family:'Cinzel',serif;font-size:.68rem;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:12px;">🌏 UNESCO</span>
+                </div>
+                <div class="card-info">
+                    <p style="color:var(--gold-dim);font-size:.8rem;margin:0 0 .5rem;letter-spacing:.5px;">📅 15 Maret 2025</p>
+                    <h3>Muaro Jambi Melangkah Lebih Dekat ke Status Warisan Dunia UNESCO</h3>
+                    <p>Indonesia secara resmi mengajukan berkas nominasi Kompleks Percandian Muaro Jambi kepada UNESCO sebagai Warisan Budaya Dunia. Dossier lengkap yang mencakup nilai universal luar biasa (OUV) kompleks seluas 3.981 hektar ini diserahkan kepada Komite Warisan Dunia untuk evaluasi tahap berikutnya.</p>
+                    <a href="https://jambi.antaranews.com/berita/615285/kemenbud-dukung-kcbn-muarajambi-diakui-unesco-sebagai-warisan-dunia" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;">Baca Selengkapnya <span class="btn-arrow">→</span></a>
+                </div>
+            </article>
+
+            <!-- ── Kartu 2: Pemugaran ── -->
+            <article class="card scroll-anim" style="--anim-delay:.08s">
+                <div style="position:relative;overflow:hidden;">
+                    <img src="img/candi-tinggi.jpg"
+                         alt="Pemugaran Candi Kedaton Muaro Jambi"
+                         loading="lazy"
+                         onerror="this.src='img/candi-tinggi-2.jpg'">
+                    <span style="position:absolute;top:.7rem;left:.7rem;background:var(--teal);color:#0a0f06;font-family:'Cinzel',serif;font-size:.68rem;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:12px;">🏗 Pemugaran</span>
+                </div>
+                <div class="card-info">
+                    <p style="color:var(--gold-dim);font-size:.8rem;margin:0 0 .5rem;letter-spacing:.5px;">📅 2 Februari 2025</p>
+                    <h3>Pemugaran Candi Kedaton Masuki Fase Rekonstruksi Terakhir</h3>
+                    <p>Balai Pelestarian Kebudayaan (BPK) Wilayah V mengumumkan bahwa pemugaran Candi Kedaton telah memasuki fase rekonstruksi atap dan dinding perimeter. Pekerjaan ini menggunakan bata merah yang diproduksi sesuai spesifikasi bata orisinal abad ke-9 Masehi dari masa Kerajaan Sriwijaya.</p>
+                    <a href="https://jambi.antaranews.com/berita/600210/wamen-kebudayaan-tinjau-pemugaran-candi-muaro-jambi" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;">Baca Selengkapnya <span class="btn-arrow">→</span></a>
+                </div>
+            </article>
+
+            <!-- ── Kartu 3: Festival Waisak ── -->
+            <article class="card scroll-anim" style="--anim-delay:.16s">
+                <div style="position:relative;overflow:hidden;">
+                    <img src="img/candi-gumpung.jpg"
+                         alt="Festival Waisak di Candi Gumpung Muaro Jambi"
+                         loading="lazy"
+                         onerror="this.src='img/candi-gumpung-2.jpg'">
+                    <span style="position:absolute;top:.7rem;left:.7rem;background:#6a4cb8;color:#f0e8ff;font-family:'Cinzel',serif;font-size:.68rem;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:12px;">☸ Wisata Budaya</span>
+                </div>
+                <div class="card-info">
+                    <p style="color:var(--gold-dim);font-size:.8rem;margin:0 0 .5rem;letter-spacing:.5px;">📅 12 Mei 2025</p>
+                    <h3>Perayaan Waisak 2569 BE Dipusatkan di Candi Gumpung</h3>
+                    <p>Ribuan umat Buddha dari seluruh Indonesia dan mancanegara berkumpul di Kompleks Percandian Muaro Jambi untuk merayakan Waisak 2569 BE. Prosesi dharma yatra dimulai dari Candi Tinggi menuju Candi Gumpung — tempat ditemukannya arca Prajnaparamita perunggu abad ke-10, pusat ritual Mahavihara Sriwijaya.</p>
+                    <a href="https://sumsel.antaranews.com/berita/647629/umat-buddha-jambi-lakukan-perayaan-bersama-waisak-di-candi-muaro-jambi" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;">Baca Selengkapnya <span class="btn-arrow">→</span></a>
+                </div>
+            </article>
+
+            <!-- ── Kartu 4: Temuan Arkeologi ── -->
+            <article class="card scroll-anim" style="--anim-delay:.24s">
+                <div style="position:relative;overflow:hidden;min-height:190px;background:var(--bg-card);">
+                    <img src="img/koto-mahligai.jpg"
+                         alt="Survei arkeologi temuan menapo baru Muaro Jambi"
+                         loading="lazy"
+                         onerror="this.onerror=null;this.src='img/candi-tinggi.jpg'">
+                    <span style="position:absolute;top:.7rem;left:.7rem;background:#b83030;color:#fff0e8;font-family:'Cinzel',serif;font-size:.68rem;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:12px;">🔍 Arkeologi</span>
+                </div>
+                <div class="card-info">
+                    <p style="color:var(--gold-dim);font-size:.8rem;margin:0 0 .5rem;letter-spacing:.5px;">📅 28 Januari 2025</p>
+                    <h3>Tim Arkeologi Temukan Tiga Menapo Baru di Sisi Barat Kompleks</h3>
+                    <p>Survei Ground Penetrating Radar (GPR) oleh tim gabungan Universitas Indonesia dan BRIN berhasil mengidentifikasi tiga struktur bata merah yang belum pernah tercatat sebelumnya di sisi barat kompleks. Penemuan ini mengindikasikan luasan situs jauh melampaui perkiraan 82+ menapo yang selama ini tercatat.</p>
+                    <a href="https://www.google.com/search?q=tim+arkeologi+temukan+menapo+baru+muaro+jambi+GPR+BRIN+2025" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;">Baca Selengkapnya <span class="btn-arrow">→</span></a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer id="tentang" class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-about">
+                <h3 class="footer-logo">✦ Ensiklopedia Muaro Jambi</h3>
+                <p>Platform ensiklopedia digital yang mendedikasikan diri untuk melestarikan dan menyebarluaskan pengetahuan tentang Kompleks Percandian Muaro Jambi — warisan peradaban Buddha terbesar di Asia Tenggara yang berada di bumi Jambi, Indonesia.</p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-creators">
+                <h4 class="footer-section-title">Pengembang &amp; Perancang</h4>
+                <div class="ig-links">
+                    <a class="ig-link" href="https://www.instagram.com/ryuji_sakamoto19/" target="_blank" rel="noopener noreferrer">
+                        <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        @ryuji_sakamoto19
+                    </a>
+                    <a class="ig-link" href="https://www.instagram.com/heran_log/" target="_blank" rel="noopener noreferrer">
+                        <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        @heran_log
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Ensiklopedia Muaro Jambi · Dibuat dengan ❤ untuk melestarikan warisan budaya Indonesia</p>
+                <div class="footer-nav">
+                    <a href="index.html">Beranda</a>
+                    <a href="kompleks.html">Seluruh Kompleks</a>
+                    <a href="news.html">Berita</a>
+                    <a href="repository.html">Repositori</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══ AI WIDGET ══ -->
+    <div id="ai-widget" class="chat-closed">
+        <button class="ai-bubble-btn" onclick="toggleChat()" aria-label="AI Pemandu Muaro Jambi">
+            <span class="ai-bubble-icon">✦</span>
+            <span class="ai-bubble-ring"></span>
+        </button>
+        <div class="ai-header" onclick="toggleChat()">
+            ✦ AI Pemandu Muaro Jambi ✦
+            <button class="ai-clear-btn" onclick="event.stopPropagation();clearChat()" title="Hapus riwayat">✕</button>
+        </div>
+        <div class="ai-body" id="chat-box">
+            <div class="message bot">Halo! Saya AI Pemandu Muaro Jambi. Ada yang ingin kamu tanyakan tentang kompleks percandian ini?</div>
+        </div>
+        <div class="ai-suggestions">
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Status UNESCO Muaro Jambi?</button>
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Perayaan Waisak di sini?</button>
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Berapa menapo yang ditemukan?</button>
+        </div>
+        <div class="ai-input" id="chat-input">
+            <input type="text" id="user-input" placeholder="Tanya tentang Muaro Jambi..." maxlength="400">
+            <button>Kirim</button>
+        </div>
+    </div>
+
+    <script src="js/temples-data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

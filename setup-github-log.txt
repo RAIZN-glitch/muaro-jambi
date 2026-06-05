@@ -1,0 +1,53 @@
+============================================
+ Setup GitHub - Ensiklopedia Candi Muaro Jambi
+============================================
+
+[1/4] git init...
+git : The term 'git' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At D:\ambatucode python\candi-project-a06e58d26d8d73ce3fd3b0bbea2d6cc06aee7e78\MuaroJambi_Web\setup-github.ps1:10 
+char:1
++ git init
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (git:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+git : The term 'git' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At D:\ambatucode python\candi-project-a06e58d26d8d73ce3fd3b0bbea2d6cc06aee7e78\MuaroJambi_Web\setup-github.ps1:11 
+char:1
++ git branch -M main
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (git:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+[2/4] git add...
+git : The term 'git' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At D:\ambatucode python\candi-project-a06e58d26d8d73ce3fd3b0bbea2d6cc06aee7e78\MuaroJambi_Web\setup-github.ps1:14 
+char:1
++ git add .
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (git:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+[3/4] git commit...
+git : The term 'git' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At D:\ambatucode python\candi-project-a06e58d26d8d73ce3fd3b0bbea2d6cc06aee7e78\MuaroJambi_Web\setup-github.ps1:17 
+char:1
++ git commit -m "Initial commit: Ensiklopedia Candi Muaro Jambi (KCBN)"
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (git:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+[4/4] Cek GitHub CLI...
+
+GitHub CLI (gh) tidak ditemukan.
+Jalankan 2 perintah ini di terminal:
+  git remote add origin https://github.com/USERNAME_KAMU/muarojambi-web.git
+  git push -u origin main
+
+Ganti USERNAME_KAMU dengan username GitHub kamu.
+Pastikan repo 'muarojambi-web' sudah dibuat di github.com terlebih dahulu.
+

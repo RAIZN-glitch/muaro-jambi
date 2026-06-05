@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositori Artikel Penelitian — Ensiklopedia Muaro Jambi</title>
+    <meta name="description" content="Repositori artikel penelitian ilmiah tentang Kompleks Percandian Muaro Jambi — arkeologi, sejarah, budaya, pariwisata, dan pendidikan.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Repository-specific styles ── */
+        .repo-grid {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+            gap: 20px;
+            padding: 0 24px 48px;
+        }
+        .repo-article {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.4rem 1.5rem;
+            display: flex;
+            gap: 1.1rem;
+            align-items: flex-start;
+            transition: border-color .3s, box-shadow .3s;
+            position: relative;
+        }
+        .repo-article:hover {
+            border-color: var(--gold-dim);
+            box-shadow: 0 8px 32px rgba(0,0,0,.4), 0 0 24px rgba(212,175,55,.07);
+        }
+        .repo-article::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--gold-dim), transparent);
+            border-radius: 8px 0 0 8px;
+            opacity: 0;
+            transition: opacity .3s;
+        }
+        .repo-article:hover::before { opacity: 1; }
+        .repo-article[data-pdf] { cursor: pointer; }
+        .repo-icon {
+            flex-shrink: 0;
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, var(--gold-dark), #1a1200);
+            border: 1px solid var(--gold-dim);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem;
+        }
+        .repo-body { flex: 1; min-width: 0; }
+        .repo-meta {
+            display: flex; flex-wrap: wrap;
+            gap: .4rem; margin-bottom: .55rem;
+        }
+        .repo-title {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1rem; font-weight: 600;
+            letter-spacing: .8px; line-height: 1.45;
+            margin: 0 0 .5rem;
+            text-shadow: 0 0 16px rgba(212,175,55,.2);
+        }
+        .repo-desc {
+            color: var(--fg-dim);
+            font-size: .87rem; line-height: 1.65;
+            margin: 0 0 .8rem;
+        }
+        .repo-footer {
+            display: flex; align-items: center;
+            gap: 1rem; flex-wrap: wrap;
+        }
+        .repo-filename {
+            font-size: .75rem;
+            color: var(--stone-mid);
+            font-family: monospace;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 4px;
+            padding: 2px 8px;
+        }
+        @media (max-width: 600px) {
+            .repo-grid { grid-template-columns: 1fr; padding: 0 14px 36px; }
+            .repo-article { flex-direction: column; }
+            .repo-icon { width: 40px; height: 40px; font-size: 1.1rem; }
+        }
+
+        /* ══════════════════════════════
+           SEARCH BAR
+        ══════════════════════════════ */
+        .repo-search-wrap {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 24px 28px;
+        }
+
+        /* ── Outer box ── */
+        .repo-search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* ── Magnifying-glass icon ── */
+        .repo-search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px; height: 18px;
+            color: var(--stone-mid);
+            pointer-events: none;
+            flex-shrink: 0;
+            transition: color .25s;
+        }
+        .repo-search-box:focus-within .repo-search-icon {
+            color: var(--gold-dim);
+        }
+
+        /* ── Text input ── */
+        .repo-search-input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--fg);
+            font-family: 'Lato', sans-serif;
+            font-size: .94rem;
+            padding: 12px 48px 12px 46px;
+            outline: none;
+            transition: border-color .25s, box-shadow .25s, background .25s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        /* Hide browser's built-in ✕ on search inputs */
+        .repo-search-input::-webkit-search-cancel-button,
+        .repo-search-input::-webkit-search-decoration { -webkit-appearance: none; }
+        .repo-search-input::placeholder { color: var(--stone-mid); opacity: .85; }
+        .repo-search-input:hover {
+            border-color: rgba(212,175,55,.26);
+            background: var(--bg-input);
+        }
+        .repo-search-input:focus {
+            border-color: var(--gold-dim);
+            box-shadow: 0 0 0 3px rgba(212,175,55,.1), 0 4px 20px rgba(0,0,0,.3);
+            background: var(--bg-input);
+        }
+
+        /* ── Clear (×) button ── */
+        .repo-search-clear {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px; height: 28px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 50%;
+            color: var(--fg-dim);
+            cursor: pointer;
+            padding: 0;
+            transition: background .18s, color .18s, border-color .18s;
+        }
+        .repo-search-clear[hidden] { display: none; }
+        .repo-search-clear svg { width: 12px; height: 12px; }
+        .repo-search-clear:hover {
+            background: rgba(212,175,55,.14);
+            color: var(--gold);
+            border-color: rgba(212,175,55,.22);
+        }
+
+        /* ── Live result count line ── */
+        .repo-search-count {
+            margin: 8px 2px 0;
+            font-size: .82rem;
+            color: var(--fg-dim);
+            transition: color .25s;
+            min-height: 1.15em;
+        }
+        .repo-search-count[hidden] { display: none; }
+
+        /* ── Empty-state message ── */
+        .repo-no-results {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 52px 24px 64px;
+            display: flex; flex-direction: column;
+            align-items: center; gap: 16px;
+            text-align: center;
+            color: var(--fg-dim);
+            font-family: 'Cinzel', serif;
+            font-size: .9rem; letter-spacing: .8px;
+            line-height: 1.6;
+        }
+        .repo-no-results[hidden] { display: none; }
+        .repo-no-results svg {
+            width: 40px; height: 40px;
+            color: var(--gold-dark);
+            opacity: .55;
+        }
+        .repo-no-results strong {
+            display: block;
+            color: var(--gold-dim);
+            font-size: .96rem;
+            margin-bottom: 4px;
+        }
+
+        /* ── Light theme tweaks ── */
+        [data-theme="light"] .repo-search-input { color: var(--fg); }
+        [data-theme="light"] .repo-search-input::placeholder { color: var(--stone); }
+        [data-theme="light"] .repo-search-clear { border-color: rgba(0,0,0,.1); background: rgba(0,0,0,.04); }
+
+        @media (max-width: 600px) {
+            .repo-search-wrap { padding: 0 14px 22px; }
+            .repo-search-input { font-size: .88rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ══ NAVIGASI ══ -->
+    <nav class="navbar">
+        <a class="nav-brand" href="index.html">✦ Muaro Jambi</a>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" class="nav-link">Beranda</a>
+            <div class="nav-dropdown" id="nav-dropdown">
+                <button class="nav-link nav-dd-btn" id="dd-toggle" aria-expanded="false">
+                    Candi <span class="dd-chevron">▾</span>
+                </button>
+                <div class="nav-dd-panel" id="dd-panel">
+                    <a href="kompleks.html" class="dd-overview">
+                        <span class="dd-overview-icon">◈</span>
+                        <span>Seluruh Kompleks Muaro Jambi</span>
+                        <span class="dd-overview-arrow">→</span>
+                    </a>
+                    <div class="dd-divider"></div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Percandian Utama</span>
+                        <a href="candi.html?id=candi-tinggi"      class="dd-item">Candi Tinggi</a>
+                        <a href="candi.html?id=candi-gumpung"     class="dd-item">Candi Gumpung</a>
+                        <a href="candi.html?id=candi-kedaton"     class="dd-item">Candi Kedaton</a>
+                        <a href="candi.html?id=candi-kembar-batu" class="dd-item">Candi Kembar Batu</a>
+                    </div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Percandian Selatan</span>
+                        <a href="candi.html?id=gedong-1"          class="dd-item">Candi Gedong I</a>
+                        <a href="candi.html?id=gedong-2"          class="dd-item">Candi Gedong II</a>
+                        <a href="candi.html?id=candi-astano"      class="dd-item">Candi Astano</a>
+                    </div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Kawasan Utara</span>
+                        <a href="candi.html?id=koto-mahligai"     class="dd-item">Koto Mahligai</a>
+                        <a href="candi.html?id=telago-rajo"       class="dd-item">Telago Rajo</a>
+                    </div>
+                </div>
+            </div>
+            <a href="news.html" class="nav-link">Berita</a>
+            <a href="repository.html" class="nav-link active">Repositori</a>
+            <a href="#tentang" class="nav-link">Tentang</a>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Buka menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <button id="theme-toggle" class="btn-theme-toggle" title="Ganti Tema">
+            <span id="theme-icon">☀</span>
+        </button>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- ══ PAGE HEADER ══ -->
+    <header class="page-header">
+        <span class="page-header-label">✦ Basis Data Ilmiah KCBN</span>
+        <h1>Repositori Artikel Penelitian</h1>
+        <p>Kumpulan artikel ilmiah tentang arkeologi, sejarah, budaya, dan pariwisata Candi Muaro Jambi</p>
+        <span class="header-ornament">◆ · · · ◆ · · · ◆</span>
+    </header>
+
+    <!-- ══ REPO SECTION ══ -->
+    <section class="island-section" style="padding-bottom:0;">
+
+        <div class="island-header scroll-anim">
+            <div class="island-title-wrap">
+                <span class="island-badge">Artikel Penelitian</span>
+                <h2 class="island-title">6 Artikel dalam Basis Data</h2>
+            </div>
+            <p style="color:var(--fg-dim);font-size:.9rem;margin:0;">Digunakan sebagai sumber RAG AI Pemandu Muaro Jambi</p>
+        </div>
+
+    </section>
+
+    <!-- ══ SEARCH BAR ══ -->
+    <div class="repo-search-wrap" role="search">
+        <div class="repo-search-box">
+            <svg class="repo-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input type="search" id="repo-search" class="repo-search-input"
+                   placeholder="Cari judul, penulis, atau tahun..."
+                   autocomplete="off" spellcheck="false"
+                   aria-label="Cari artikel penelitian">
+            <button class="repo-search-clear" id="repo-search-clear" type="button"
+                    aria-label="Hapus pencarian" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <p class="repo-search-count" id="repo-search-count" aria-live="polite" hidden></p>
+    </div>
+
+    <!-- ══ ARTICLE CARDS ══ -->
+    <div class="repo-grid">
+
+        <!-- ── Artikel 1 ── -->
+        <article class="repo-article scroll-anim" style="--anim-delay:0s" data-pdf="https://www.taylorfrancis.com/chapters/oa-edit/10.1201/9781315225340-79/ancient-water-system-reservoir-muarajambi-archaeological-site-arkhi-wahyudi">
+            <div class="repo-icon">💧</div>
+            <div class="repo-body">
+                <div class="repo-meta">
+                    <span class="meta-tag">📅 2018</span>
+                    <span class="meta-tag">👤 C.M. Arkhi &amp; W.R. Wahyudi, Universitas Indonesia</span>
+                    <span class="meta-tag religion-buddha">☸ Arkeologi</span>
+                </div>
+                <h3 class="repo-title">Sistem Air Kuno dan Reservoir di Situs Arkeologi Muarajambi</h3>
+                <p class="repo-desc">Menganalisis 17 saluran air, 10 kolam, dan 6 reservoir di kawasan situs yang berfungsi mengelola banjir dan mendukung kegiatan ribuan biksu Mahavihara. Termasuk identifikasi Kolam Telago Rajo sebagai kolam buatan manusia dan kajian catatan perjalanan I-Tsing abad ke-7 M.</p>
+                <div class="repo-footer">
+                    <span class="repo-filename">📁 Ancient_water_system_and_reservoir_at_the_Muarajambi.pdf</span>
+                    <a href="https://www.taylorfrancis.com/chapters/oa-edit/10.1201/9781315225340-79/ancient-water-system-reservoir-muarajambi-archaeological-site-arkhi-wahyudi" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;font-size:.85rem;padding:.35rem .85rem;">Lihat Detail <span class="btn-arrow">→</span></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ── Artikel 2 ── -->
+        <article class="repo-article scroll-anim" style="--anim-delay:.06s" data-pdf="https://journal.ar-raniry.ac.id/index.php/jsai/article/view/6862">
+            <div class="repo-icon">☸</div>
+            <div class="repo-body">
+                <div class="repo-meta">
+                    <span class="meta-tag">📅 2025</span>
+                    <span class="meta-tag">👤 Puji Sulani dkk, STAB Negeri Sriwijaya</span>
+                    <span class="meta-tag religion-buddha">☸ Komunitas Buddha</span>
+                </div>
+                <h3 class="repo-title">Keterlibatan Komunitas Buddha dengan Kompleks Candi Muaro Jambi dan Dampaknya terhadap Identitas Keagamaan dan Sosial-Ekonomi</h3>
+                <p class="repo-desc">Mengkaji bagaimana perayaan Waisak, meditasi, dan dharmayatra sejak 1990-an membentuk identitas komunal umat Buddha Jambi. Menelusuri pembentukan PUBJ (2017) yang kini beranggotakan 20+ vihara dan dampak ekonomi bagi pedagang lokal selama perayaan keagamaan.</p>
+                <div class="repo-footer">
+                    <span class="repo-filename">📁 Buddhist_Engagement_with_the_Muaro_Jambi_Temple_Co.pdf</span>
+                    <a href="https://journal.ar-raniry.ac.id/index.php/jsai/article/view/6862" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;font-size:.85rem;padding:.35rem .85rem;">Lihat Detail <span class="btn-arrow">→</span></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ── Artikel 3 ── -->
+        <article class="repo-article scroll-anim" style="--anim-delay:.12s" data-pdf="https://judikatif-upiyptk.org/ojs/index.php/judikatif/article/view/34">
+            <div class="repo-icon">🎬</div>
+            <div class="repo-body">
+                <div class="repo-meta">
+                    <span class="meta-tag">📅 2022</span>
+                    <span class="meta-tag">👤 M. Sayuti dkk, ISI Padangpanjang</span>
+                    <span class="meta-tag">🎨 Media &amp; Wisata</span>
+                </div>
+                <h3 class="repo-title">Motion Graphic sebagai Media Informasi Wisata Kompleks Percandian Muara Jambi</h3>
+                <p class="repo-desc">Membahas KPMJ sebagai kompleks percandian Buddha terluas di Asia Tenggara (7,5 km × 17,5 km²) dengan 9 bangunan utama. Mengupas sejarah penemuan tahun 1820 oleh Kapten E.C. Crooke, penetapan KWST tahun 2007, dan pendaftaran UNESCO tahun 2009.</p>
+                <div class="repo-footer">
+                    <span class="repo-filename">📁 Motion_Graphic_Media_Informasi_Wisata_Kompleks_Per.pdf</span>
+                    <a href="https://judikatif-upiyptk.org/ojs/index.php/judikatif/article/view/34" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;font-size:.85rem;padding:.35rem .85rem;">Lihat Detail <span class="btn-arrow">→</span></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ── Artikel 4 ── -->
+        <article class="repo-article scroll-anim" style="--anim-delay:.18s" data-pdf="https://jurnal.univpgri-palembang.ac.id/index.php/Kalpa/article/view/1614">
+            <div class="repo-icon">🏛</div>
+            <div class="repo-body">
+                <div class="repo-meta">
+                    <span class="meta-tag">📅 2017</span>
+                    <span class="meta-tag">👤 Fitria Larasati, Universitas PGRI Palembang</span>
+                    <span class="meta-tag">🎓 Pendidikan Sejarah</span>
+                </div>
+                <h3 class="repo-title">Nilai Budaya Bangunan dan Ragam Hias Candi Kembar Batu Muara Jambi sebagai Sumber Pembelajaran Sejarah</h3>
+                <p class="repo-desc">Menganalisis nilai budaya arsitektur dan ragam hias Candi Kembar Batu — satu-satunya candi kembar di kompleks yang menampilkan relief kala dan makara. Mengkaji relevansinya sebagai sumber belajar sejarah lokal di tingkat SMA sesuai kurikulum nasional.</p>
+                <div class="repo-footer">
+                    <span class="repo-filename">📁 NILAI_BUDAYA_BANGUNAN_DAN_RAGAM_HIAS_CANDI_KEMBAR_.pdf</span>
+                    <a href="https://jurnal.univpgri-palembang.ac.id/index.php/Kalpa/article/view/1614" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;font-size:.85rem;padding:.35rem .85rem;">Lihat Detail <span class="btn-arrow">→</span></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ── Artikel 5 ── -->
+        <article class="repo-article scroll-anim" style="--anim-delay:.24s" data-pdf="https://journal2.um.ac.id/index.php/sejarah/article/view/14165">
+            <div class="repo-icon">💻</div>
+            <div class="repo-body">
+                <div class="repo-meta">
+                    <span class="meta-tag">📅 2020</span>
+                    <span class="meta-tag">👤 M. Afrillyan Dwi Syahputra dkk, Universitas Sebelas Maret</span>
+                    <span class="meta-tag">🌐 Era Digital</span>
+                </div>
+                <h3 class="repo-title">Pemanfaatan Situs Purbakala Candi Muaro Jambi sebagai Objek Pembelajaran Sejarah Lokal di Era Digital</h3>
+                <p class="repo-desc">Mengkaji strategi integrasi situs purbakala Candi Muaro Jambi ke dalam pembelajaran sejarah lokal berbasis teknologi digital. Membahas pemanfaatan media digital, virtual tour, dan e-learning untuk memperluas jangkauan pendidikan sejarah di era 4.0.</p>
+                <div class="repo-footer">
+                    <span class="repo-filename">📁 Pemanfaatan_Situs_Purbakala_Candi_Muaro__1_.pdf</span>
+                    <a href="https://journal2.um.ac.id/index.php/sejarah/article/view/14165" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;font-size:.85rem;padding:.35rem .85rem;">Lihat Detail <span class="btn-arrow">→</span></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ── Artikel 6 ── -->
+        <article class="repo-article scroll-anim" style="--anim-delay:.30s" data-pdf="https://scholar.google.com/scholar?q=Potensi+dan+Relevansi+Candi+Muaro+Jambi+sebagai+Sumber+Belajar+Sejarah+di+SMA">
+            <div class="repo-icon">📖</div>
+            <div class="repo-body">
+                <div class="repo-meta">
+                    <span class="meta-tag">📅 2020</span>
+                    <span class="meta-tag">👤 M. Afrillyan Dwi Syahputra dkk, Universitas Sebelas Maret</span>
+                    <span class="meta-tag">🎓 Pendidikan SMA</span>
+                </div>
+                <h3 class="repo-title">Potensi dan Relevansi Candi Muaro Jambi sebagai Sumber Belajar Sejarah di SMA</h3>
+                <p class="repo-desc">Menelaah potensi Kompleks Percandian Muaro Jambi sebagai sumber belajar sejarah yang autentik bagi siswa SMA. Mengidentifikasi nilai historis, arkeologis, dan budaya yang relevan dengan kompetensi dasar kurikulum sejarah nasional serta strategi implementasinya di kelas.</p>
+                <div class="repo-footer">
+                    <span class="repo-filename">📁 PEMANFAATAN_SITUS_PURBAKALA_CANDI_MUARO_JAMBI_SEBA.pdf</span>
+                    <a href="https://scholar.google.com/scholar?q=Potensi+dan+Relevansi+Candi+Muaro+Jambi+sebagai+Sumber+Belajar+Sejarah+di+SMA" target="_blank" rel="noopener noreferrer" class="btn-explore" style="text-decoration:none;font-size:.85rem;padding:.35rem .85rem;">Lihat Detail <span class="btn-arrow">→</span></a>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- ══ FOOTER ══ -->
+    <footer id="tentang" class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-about">
+                <h3 class="footer-logo">✦ Ensiklopedia Muaro Jambi</h3>
+                <p>Platform ensiklopedia digital yang mendedikasikan diri untuk melestarikan dan menyebarluaskan pengetahuan tentang Kompleks Percandian Muaro Jambi — warisan peradaban Buddha terbesar di Asia Tenggara yang berada di bumi Jambi, Indonesia.</p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-creators">
+                <h4 class="footer-section-title">Pengembang &amp; Perancang</h4>
+                <div class="ig-links">
+                    <a class="ig-link" href="https://www.instagram.com/ryuji_sakamoto19/" target="_blank" rel="noopener noreferrer">
+                        <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        @ryuji_sakamoto19
+                    </a>
+                    <a class="ig-link" href="https://www.instagram.com/heran_log/" target="_blank" rel="noopener noreferrer">
+                        <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        @heran_log
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Ensiklopedia Muaro Jambi · Dibuat dengan ❤ untuk melestarikan warisan budaya Indonesia</p>
+                <div class="footer-nav">
+                    <a href="index.html">Beranda</a>
+                    <a href="kompleks.html">Seluruh Kompleks</a>
+                    <a href="news.html">Berita</a>
+                    <a href="repository.html">Repositori</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══ AI WIDGET ══ -->
+    <div id="ai-widget" class="chat-closed">
+        <button class="ai-bubble-btn" onclick="toggleChat()" aria-label="AI Pemandu Muaro Jambi">
+            <span class="ai-bubble-icon">✦</span>
+            <span class="ai-bubble-ring"></span>
+        </button>
+        <div class="ai-header" onclick="toggleChat()">
+            ✦ AI Pemandu Muaro Jambi ✦
+            <button class="ai-clear-btn" onclick="event.stopPropagation();clearChat()" title="Hapus riwayat">✕</button>
+        </div>
+        <div class="ai-body" id="chat-box">
+            <div class="message bot">Halo! Saya AI Pemandu Muaro Jambi. Ada yang ingin kamu tanyakan tentang artikel penelitian atau kompleks percandian ini?</div>
+        </div>
+        <div class="ai-suggestions">
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Sistem air di Muaro Jambi?</button>
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Candi Kembar Batu itu apa?</button>
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Nilai sejarah untuk pelajar?</button>
+        </div>
+        <div class="ai-input" id="chat-input">
+            <input type="text" id="user-input" placeholder="Tanya tentang penelitian Muaro Jambi..." maxlength="400">
+            <button>Kirim</button>
+        </div>
+    </div>
+
+    <script src="js/temples-data.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- ══ CARD CLICK ══ -->
+    <script>
+    document.querySelectorAll('.repo-article[data-pdf]').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('a')) return;
+            window.open(card.dataset.pdf, '_blank', 'noopener,noreferrer');
+        });
+    });
+    </script>
+
+    <!-- ══ SEARCH LOGIC ══ -->
+    <script>
+    (function () {
+        var input    = document.getElementById('repo-search');
+        var clearBtn = document.getElementById('repo-search-clear');
+        var countEl  = document.getElementById('repo-search-count');
+        var grid     = document.querySelector('.repo-grid');
+        var cards    = Array.from(document.querySelectorAll('.repo-article'));
+        var total    = cards.length;
+        if (!input || !grid || !cards.length) return;
+
+        /* Build no-results panel dynamically and insert after the grid */
+        var noResultsEl = document.createElement('div');
+        noResultsEl.className = 'repo-no-results';
+        noResultsEl.hidden = true;
+        noResultsEl.innerHTML =
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
+            'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M8 11h6"/>' +
+            '</svg>' +
+            '<strong>Tidak ada hasil ditemukan</strong>' +
+            'Tidak ada artikel yang sesuai dengan pencarian.';
+        grid.insertAdjacentElement('afterend', noResultsEl);
+
+        /* Pre-compute lowercase search corpus for each card */
+        var texts = cards.map(function (c) {
+            var title = (c.querySelector('.repo-title') || {}).textContent || '';
+            var metas = Array.from(c.querySelectorAll('.meta-tag')).map(function (m) {
+                return m.textContent;
+            });
+            return [title].concat(metas).join(' ').toLowerCase();
+        });
+
+        function update() {
+            var q = input.value.trim().toLowerCase();
+            clearBtn.hidden = !q;
+            var visible = 0;
+            cards.forEach(function (card, i) {
+                var show = !q || texts[i].indexOf(q) !== -1;
+                card.hidden = !show;
+                if (show) visible++;
+            });
+            if (q) {
+                countEl.hidden = false;
+                countEl.textContent = visible
+                    ? 'Menampilkan ' + visible + ' dari ' + total + ' artikel'
+                    : '';
+                noResultsEl.hidden = visible > 0;
+            } else {
+                countEl.hidden = true;
+                noResultsEl.hidden = true;
+            }
+        }
+
+        input.addEventListener('input', update);
+
+        clearBtn.addEventListener('click', function () {
+            input.value = '';
+            update();
+            input.focus();
+        });
+
+        input.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') { input.value = ''; update(); }
+        });
+    })();
+    </script>
+</body>
+</html>

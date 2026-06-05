@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Candi Muaro Jambi — Ensiklopedia</title>
+    <meta name="description" content="Ensiklopedia Kompleks Percandian Muaro Jambi — kompleks percandian Buddha terluas di Asia Tenggara, warisan Kerajaan Sriwijaya dan Melayu Kuno di tepi Sungai Batanghari, Jambi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ══ NAVIGASI ══ -->
+    <nav class="navbar">
+        <a class="nav-brand" href="index.html">✦ Muaro Jambi</a>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" class="nav-link active">Beranda</a>
+            <div class="nav-dropdown" id="nav-dropdown">
+                <button class="nav-link nav-dd-btn" id="dd-toggle" aria-expanded="false">
+                    Candi <span class="dd-chevron">▾</span>
+                </button>
+                <div class="nav-dd-panel" id="dd-panel">
+                    <a href="kompleks.html" class="dd-overview">
+                        <span class="dd-overview-icon">◈</span>
+                        <span>Seluruh Kompleks Muaro Jambi</span>
+                        <span class="dd-overview-arrow">→</span>
+                    </a>
+                    <div class="dd-divider"></div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Percandian Utama</span>
+                        <a href="candi.html?id=candi-tinggi"      class="dd-item">Candi Tinggi</a>
+                        <a href="candi.html?id=candi-gumpung"     class="dd-item">Candi Gumpung</a>
+                        <a href="candi.html?id=candi-kedaton"     class="dd-item">Candi Kedaton</a>
+                        <a href="candi.html?id=candi-kembar-batu" class="dd-item">Candi Kembar Batu</a>
+                    </div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Percandian Selatan</span>
+                        <a href="candi.html?id=gedong-1"          class="dd-item">Candi Gedong I</a>
+                        <a href="candi.html?id=gedong-2"          class="dd-item">Candi Gedong II</a>
+                        <a href="candi.html?id=candi-astano"      class="dd-item">Candi Astano</a>
+                    </div>
+                    <div class="dd-group">
+                        <span class="dd-group-label">◆ Kawasan Utara</span>
+                        <a href="candi.html?id=koto-mahligai"     class="dd-item">Koto Mahligai</a>
+                        <a href="candi.html?id=telago-rajo"       class="dd-item">Telago Rajo</a>
+                    </div>
+                </div>
+            </div>
+            <a href="news.html" class="nav-link">Berita</a>
+            <a href="repository.html" class="nav-link">Repositori</a>
+            <a href="#tentang" class="nav-link">Tentang</a>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Buka menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <button id="theme-toggle" class="btn-theme-toggle" title="Ganti Tema">
+            <span id="theme-icon">☀</span>
+        </button>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- ══ HERO — SPLIT LAYOUT ══ -->
+    <section class="hero hp-hero">
+        <div class="hp-hero-text">
+            <span class="hero-label">✦ Kompleks Percandian Buddha Terluas di Asia Tenggara ✦</span>
+            <h1 class="hero-title">Sejarah Candi<br><span class="hp-title-accent">Muaro Jambi</span></h1>
+            <p class="hero-sub">Kompleks percandian Buddha terluas di Asia Tenggara — membentang 7,5 km di tepi Sungai Batanghari. Ribuan tahun sejarah Kerajaan Sriwijaya dan Melayu Kuno terukir dalam lebih dari 82 gundukan candi yang belum sepenuhnya terungkap.</p>
+            <div class="hero-cta">
+                <a href="#koleksi" class="btn-hero-primary">Jelajahi Kompleks <span>↓</span></a>
+                <a href="candi.html?id=candi-tinggi" class="btn-hero-secondary">Sorotan: Candi Tinggi <span>→</span></a>
+            </div>
+        </div>
+        <div class="hp-hero-img">
+            <div class="hp-hero-frame">
+                <img src="img/kompleks.jpg"
+                     alt="Kompleks Percandian Muaro Jambi — Pintu Masuk Candi Gumpung"
+                     onerror="this.onerror=null;this.src='img/candi-tinggi.jpg'">
+                <div class="hp-hero-caption">
+                    <span class="hp-hero-caption-name">✦ Candi Gumpung</span>
+                    <span class="hp-hero-caption-meta">Abad 9–11 M · Muaro Jambi</span>
+                </div>
+                <div class="hp-hero-corner hp-hero-corner-tl" aria-hidden="true"></div>
+                <div class="hp-hero-corner hp-hero-corner-br" aria-hidden="true"></div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span class="scroll-dot"></span>
+            <span class="scroll-dot"></span>
+            <span class="scroll-dot"></span>
+        </div>
+    </section>
+
+    <!-- ══ STATS STRIP ══ -->
+    <div class="hp-stats scroll-anim">
+        <div class="hp-stats-inner">
+            <div class="hp-stat">
+                <span class="hp-stat-num">82+</span>
+                <span class="hp-stat-label">Gundukan Menapo</span>
+            </div>
+            <div class="hp-stat-div"></div>
+            <div class="hp-stat">
+                <span class="hp-stat-num">3.981</span>
+                <span class="hp-stat-label">Hektar Kawasan</span>
+            </div>
+            <div class="hp-stat-div"></div>
+            <div class="hp-stat">
+                <span class="hp-stat-num">8</span>
+                <span class="hp-stat-label">Candi Dipugar</span>
+            </div>
+            <div class="hp-stat-div"></div>
+            <div class="hp-stat">
+                <span class="hp-stat-num">7,5 km</span>
+                <span class="hp-stat-label">Bentang Kompleks</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ FEATURED — SOROTAN UTAMA ══ -->
+    <section class="hp-featured">
+        <div class="hp-featured-inner">
+
+            <div class="hp-section-head scroll-anim">
+                <span class="hp-eyebrow">◆ Sorotan Utama</span>
+                <h2 class="hp-section-title">Candi yang Wajib Diketahui</h2>
+                <p class="hp-section-sub">Dua candi terpenting di inti Kompleks Muaro Jambi — pusat peradaban Buddha di jantung Jambi</p>
+            </div>
+
+            <!-- Featured 1: Candi Tinggi -->
+            <article class="hp-feat-card scroll-anim">
+                <div class="hp-feat-img">
+                    <img src="img/candi-tinggi.jpg"
+                         alt="Candi Tinggi Muaro Jambi"
+                         loading="lazy"
+                         onerror="this.src='img/candi-tinggi-2.jpg'">
+                    <span class="hp-feat-era">Abad 7–11 M</span>
+                </div>
+                <div class="hp-feat-body">
+                    <div class="hp-feat-tags">
+                        <span class="meta-tag religion-buddha">☸ Buddha</span>
+                        <span class="meta-tag">📍 Muaro Jambi, Jambi</span>
+                        <span class="meta-tag">🏛 Sriwijaya</span>
+                    </div>
+                    <h3 class="hp-feat-title">Candi Tinggi</h3>
+                    <p class="hp-feat-desc">Bangunan terbesar dan termegah di seluruh Kompleks Muaro Jambi. Dengan denah 13 × 16 meter dan empat tingkat undakan bata merah yang tersusun presisi, Candi Tinggi menjadi pusat ritual dan landmark utama kompleks percandian terluas di Asia Tenggara ini — saksi bisu kejayaan Kerajaan Sriwijaya selama berabad-abad.</p>
+                    <a href="candi.html?id=candi-tinggi" class="btn-explore" style="text-decoration:none;align-self:flex-start;">Jelajahi Candi Ini <span class="btn-arrow">→</span></a>
+                </div>
+            </article>
+
+            <!-- Featured 2: Candi Gumpung (reversed) -->
+            <article class="hp-feat-card hp-feat-card-rev scroll-anim" style="--anim-delay:.1s">
+                <div class="hp-feat-img">
+                    <img src="img/candi-gumpung.jpg"
+                         alt="Candi Gumpung Muaro Jambi"
+                         loading="lazy"
+                         onerror="this.src='img/candi-gumpung-2.jpg'">
+                    <span class="hp-feat-era">Abad 9–11 M</span>
+                </div>
+                <div class="hp-feat-body">
+                    <div class="hp-feat-tags">
+                        <span class="meta-tag religion-buddha">☸ Buddha Mahayana</span>
+                        <span class="meta-tag">📍 Muaro Jambi, Jambi</span>
+                        <span class="meta-tag">🏛 Sriwijaya / Melayu</span>
+                    </div>
+                    <h3 class="hp-feat-title">Candi Gumpung</h3>
+                    <p class="hp-feat-desc">Tempat ditemukannya arca Prajnaparamita perunggu abad ke-10 — dewi kebijaksanaan tertinggi dalam tradisi Buddha Mahayana. Penemuan arca langka ini menegaskan bahwa Muaro Jambi adalah pusat studi dan ritual Buddha Mahayana setara Nalanda di India, dengan jaringan spiritual yang merentang ke seluruh Asia.</p>
+                    <a href="candi.html?id=candi-gumpung" class="btn-explore" style="text-decoration:none;align-self:flex-start;">Jelajahi Candi Ini <span class="btn-arrow">→</span></a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ══ DIVIDER ══ -->
+    <div class="hp-divider" aria-hidden="true">
+        <div class="hp-divider-inner">
+            <span class="hp-divider-line"></span>
+            <span class="hp-divider-ornament">◆ · · · ◆ · · · ◆</span>
+            <span class="hp-divider-line"></span>
+        </div>
+    </div>
+
+    <!-- ══ ACCORDION — MULAI JELAJAHI ══ -->
+    <div id="koleksi"></div>
+    <section class="hp-explore">
+        <div class="hp-explore-inner">
+
+            <div class="hp-section-head scroll-anim">
+                <span class="hp-eyebrow">◆ Per Kawasan</span>
+                <h2 class="hp-section-title">Mulai Jelajahi</h2>
+                <p class="hp-section-sub">Buka tiap kawasan untuk membaca artikel lengkap setiap candi dalam kompleks</p>
+            </div>
+
+            <div class="hp-accordion" id="hp-accordion">
+                <!-- Di-generate oleh JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══ DIVIDER ══ -->
+    <div class="hp-divider" aria-hidden="true">
+        <div class="hp-divider-inner">
+            <span class="hp-divider-line"></span>
+            <span class="hp-divider-ornament">◆ · · · ◆ · · · ◆</span>
+            <span class="hp-divider-line"></span>
+        </div>
+    </div>
+
+    <!-- ══ SEMUA KOLEKSI ══ -->
+    <section class="island-section hp-grid-section">
+        <div class="island-header scroll-anim">
+            <div class="island-title-wrap">
+                <span class="island-badge">Kompleks Percandian Muaro Jambi</span>
+                <h2 class="island-title">Semua Candi yang Dipugar</h2>
+            </div>
+            <p class="hp-grid-sub">8 candi yang telah selesai dipugar dari 82+ gundukan menapo</p>
+        </div>
+        <div class="container" id="sumatra-grid"></div>
+    </section>
+
+    <!-- ══ CTA STRIP ══ -->
+    <div class="hp-cta-wrap">
+        <div class="hp-cta scroll-anim">
+            <div class="hp-cta-text">
+                <h3 class="hp-cta-title">Ingin Mengenal Lebih Dalam?</h3>
+                <p class="hp-cta-sub">Setiap candi memiliki halaman lengkap: narasi sejarah mendalam, data arkeologi, dan peta interaktif.</p>
+            </div>
+            <a href="candi.html?id=candi-tinggi" class="btn-hero-primary" style="text-decoration:none;white-space:nowrap;flex-shrink:0;">
+                Mulai dari Candi Tinggi <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ══ DIVIDER ══ -->
+    <div class="hp-divider" aria-hidden="true">
+        <div class="hp-divider-inner">
+            <span class="hp-divider-line"></span>
+            <span class="hp-divider-ornament">◆ · · · ◆ · · · ◆</span>
+            <span class="hp-divider-line"></span>
+        </div>
+    </div>
+
+    <!-- ══ INFORMASI KUNJUNGAN ══ -->
+    <section class="visit-info-section">
+        <div class="visit-info-inner">
+
+            <div class="hp-section-head scroll-anim">
+                <span class="hp-eyebrow">◆ Panduan Wisata</span>
+                <h2 class="hp-section-title">Informasi Kunjungan</h2>
+                <p class="hp-section-sub">Semua yang perlu Anda ketahui sebelum mengunjungi Kompleks Percandian Muaro Jambi</p>
+            </div>
+
+            <div class="visit-cards">
+
+                <!-- Card 1: Tiket Masuk -->
+                <div class="visit-card scroll-anim">
+                    <div class="visit-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 9a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a2 2 0 0 0 0 4v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a2 2 0 0 0 0-4Z"/>
+                            <line x1="9" y1="8" x2="9" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3 class="visit-card-title">Tiket Masuk</h3>
+                    <ul class="visit-list">
+                        <li class="visit-list-item">
+                            <span class="visit-label">Wisatawan Domestik</span>
+                            <span class="visit-value">Rp 10.000</span>
+                        </li>
+                        <li class="visit-list-item">
+                            <span class="visit-label">Wisatawan Mancanegara</span>
+                            <span class="visit-value">Rp 20.000</span>
+                        </li>
+                        <li class="visit-list-divider" aria-hidden="true"></li>
+                        <li class="visit-list-item">
+                            <span class="visit-label">Parkir Motor</span>
+                            <span class="visit-value">Rp 5.000</span>
+                        </li>
+                        <li class="visit-list-item">
+                            <span class="visit-label">Parkir Mobil</span>
+                            <span class="visit-value">Rp 10.000</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Jam Operasional -->
+                <div class="visit-card scroll-anim" style="--anim-delay:.07s">
+                    <div class="visit-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="visit-card-title">Jam Operasional</h3>
+                    <ul class="visit-list">
+                        <li class="visit-list-item">
+                            <span class="visit-label">Senin – Jumat</span>
+                            <span class="visit-value">08.00 – 17.00 WIB</span>
+                        </li>
+                        <li class="visit-list-item">
+                            <span class="visit-label">Sabtu – Minggu</span>
+                            <span class="visit-value">07.00 – 18.00 WIB</span>
+                        </li>
+                        <li class="visit-list-item">
+                            <span class="visit-label">Hari Libur Nasional</span>
+                            <span class="visit-value">07.00 – 18.00 WIB</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Pemandu Wisata -->
+                <div class="visit-card scroll-anim" style="--anim-delay:.14s">
+                    <div class="visit-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                            <path d="M14.5 14.5 17 17l3-3"/>
+                        </svg>
+                    </div>
+                    <h3 class="visit-card-title">Pemandu Wisata</h3>
+                    <p class="visit-guide-desc">Hubungi pemandu wisata lokal berpengalaman:</p>
+                    <div class="visit-ig-links">
+                        <a href="https://www.instagram.com/tour_candimuarajambi" target="_blank" rel="noopener noreferrer" class="visit-ig-btn">
+                            <svg class="visit-ig-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            @tour_candimuarajambi
+                        </a>
+                        <a href="https://www.instagram.com/guide_muarojambitemple" target="_blank" rel="noopener noreferrer" class="visit-ig-btn">
+                            <svg class="visit-ig-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            @guide_muarojambitemple
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Info & Kontak -->
+                <div class="visit-card scroll-anim" style="--anim-delay:.21s">
+                    <div class="visit-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                    </div>
+                    <h3 class="visit-card-title">Info &amp; Kontak</h3>
+                    <p class="visit-guide-desc">Ikuti informasi resmi dan kegiatan terkini:</p>
+                    <div class="visit-ig-links">
+                        <a href="https://www.instagram.com/candimuarajambi/" target="_blank" rel="noopener noreferrer" class="visit-ig-btn">
+                            <svg class="visit-ig-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            @candimuarajambi
+                        </a>
+                        <a href="https://www.instagram.com/bp_kebudayaan_jambi" target="_blank" rel="noopener noreferrer" class="visit-ig-btn">
+                            <svg class="visit-ig-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            @bp_kebudayaan_jambi
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer id="tentang" class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-about">
+                <h3 class="footer-logo">✦ Ensiklopedia Muaro Jambi</h3>
+                <p>Platform ensiklopedia digital yang mendedikasikan diri untuk melestarikan dan menyebarluaskan pengetahuan tentang Kompleks Percandian Muaro Jambi — warisan peradaban Buddha terbesar di Asia Tenggara yang berada di bumi Jambi, Indonesia.</p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-creators">
+                <h4 class="footer-section-title">Pengembang &amp; Perancang</h4>
+                <div class="ig-links">
+                    <a class="ig-link" href="https://www.instagram.com/ryuji_sakamoto19/" target="_blank" rel="noopener noreferrer">
+                        <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        @ryuji_sakamoto19
+                    </a>
+                    <a class="ig-link" href="https://www.instagram.com/heran_log/" target="_blank" rel="noopener noreferrer">
+                        <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        @heran_log
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Ensiklopedia Muaro Jambi · Dibuat dengan ❤ untuk melestarikan warisan budaya Indonesia</p>
+                <div class="footer-nav">
+                    <a href="index.html">Beranda</a>
+                    <a href="kompleks.html">Seluruh Kompleks</a>
+                    <a href="news.html">Berita</a>
+                    <a href="repository.html">Repositori</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══ AI WIDGET ══ -->
+    <div id="ai-widget" class="chat-closed">
+        <button class="ai-bubble-btn" onclick="toggleChat()" aria-label="AI Pemandu Muaro Jambi">
+            <span class="ai-bubble-icon">✦</span>
+            <span class="ai-bubble-ring"></span>
+        </button>
+        <div class="ai-header" onclick="toggleChat()">
+            ✦ AI Pemandu Muaro Jambi ✦
+            <button class="ai-clear-btn" onclick="event.stopPropagation();clearChat()" title="Hapus riwayat">✕</button>
+        </div>
+        <div class="ai-body" id="chat-box">
+            <div class="message bot">Halo! Saya AI Pemandu Muaro Jambi. Ada yang ingin kamu tanyakan tentang kompleks percandian ini?</div>
+        </div>
+        <div class="ai-suggestions">
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Candi terbesar di kompleks?</button>
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Sejarah Sriwijaya di Jambi?</button>
+            <button class="ai-chip" onclick="sendSuggestion(this.textContent)">Arca Prajnaparamita itu apa?</button>
+        </div>
+        <div class="ai-input" id="chat-input">
+            <input type="text" id="user-input" placeholder="Tanya tentang Muaro Jambi..." maxlength="400">
+            <button>Kirim</button>
+        </div>
+    </div>
+
+    <script src="js/temples-data.js"></script>
+    <script>
+    /* ── Accordion "Mulai Jelajahi" — dikelompokkan per zona ── */
+    (function() {
+        var acc = document.getElementById('hp-accordion');
+        if (!acc || typeof TEMPLES === 'undefined') return;
+
+        var LR = 'img/kompleks.jpg';
+
+        // Urutan zona sesuai posisi geografis kompleks
+        var ZONE_ORDER = ['Percandian Utama', 'Percandian Selatan', 'Kawasan Utara'];
+
+        // Grup candi per zona
+        var groups = {};
+        ZONE_ORDER.forEach(function(z) { groups[z] = []; });
+        TEMPLES.forEach(function(t) {
+            if (groups[t.zone]) {
+                groups[t.zone].push(t);
+            }
+        });
+
+        var html = '';
+        ZONE_ORDER.forEach(function(zone, zi) {
+            var temples = groups[zone];
+            if (!temples || temples.length === 0) return;
+            var isFirst = zi === 0;
+
+            html += '<div class="acc-item' + (isFirst ? ' acc-open' : '') + '">';
+
+            // ── Header accordion ──
+            html += '<button class="acc-head" aria-expanded="' + isFirst + '">';
+            html += '<span class="acc-prov-icon">◈</span>';
+            html += '<span class="acc-prov">' + zone + '</span>';
+            html += '<span class="acc-badge">' + temples.length + ' candi</span>';
+            html += '<span class="acc-chevron">▾</span>';
+            html += '</button>';
+
+            // ── Body accordion ──
+            html += '<div class="acc-body"><div class="acc-body-inner">';
+
+            temples.forEach(function(t) {
+                var fb      = t.imageFallback || LR;
+                var onerror = "this.onerror=function(){this.onerror=null;this.src='" + LR + "'};this.src='" + fb + "'";
+
+                html += '<article class="acc-temple">';
+
+                // Gambar
+                html += '<div class="acc-temple-img">';
+                html += '<img src="' + t.image + '" alt="' + t.name + '" loading="lazy" onerror="' + onerror + '">';
+                html += '<span class="acc-era-badge">' + t.era + '</span>';
+                html += '</div>';
+
+                // Konten
+                html += '<div class="acc-temple-body">';
+                html += '<div class="acc-temple-meta">';
+                html += '<span class="meta-tag religion-' + t.religion + '">' + (t.religion === 'buddha' ? '☸' : '⬡') + ' ' + t.religionLabel + '</span>';
+                html += '<span class="meta-tag">📍 ' + t.location + '</span>';
+                html += '<span class="meta-tag">🏛 ' + t.kingdom + '</span>';
+                html += '</div>';
+                html += '<h3 class="acc-temple-name">' + t.name + '</h3>';
+                var para = (t.paragraphs && t.paragraphs.length) ? t.paragraphs[0] : t.shortDesc;
+                html += '<p class="acc-temple-desc">' + para + '</p>';
+                html += '<a href="candi.html?id=' + t.id + '" class="btn-explore acc-temple-btn" style="text-decoration:none;">Baca Selengkapnya <span class="btn-arrow">→</span></a>';
+                html += '</div>';
+
+                html += '</article>';
+            });
+
+            html += '</div></div></div>';
+        });
+
+        acc.innerHTML = html;
+
+        // ── Toggle logic (accordion single-open) ──
+        acc.addEventListener('click', function(e) {
+            var btn = e.target.closest('.acc-head');
+            if (!btn) return;
+            var item   = btn.closest('.acc-item');
+            var isOpen = item.classList.contains('acc-open');
+
+            acc.querySelectorAll('.acc-item').forEach(function(i) {
+                i.classList.remove('acc-open');
+                i.querySelector('.acc-head').setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                item.classList.add('acc-open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        if (window.reinitScrollAnim) window.reinitScrollAnim();
+    })();
+
+    /* ── Generate kartu semua candi ── */
+    (function() {
+        var grid = document.getElementById('sumatra-grid');
+        if (!grid || typeof TEMPLES === 'undefined') return;
+        var LAST_RESORT = 'img/kompleks.jpg';
+        grid.innerHTML = TEMPLES.map(function(t, i) {
+            var fallback = t.imageFallback || LAST_RESORT;
+            var onerror  = "this.onerror=function(){this.onerror=null;this.src='" + LAST_RESORT + "'};this.src='" + fallback + "'";
+            var delay    = (i * 0.08).toFixed(2) + 's';
+            return '<div class="card scroll-anim" style="--anim-delay:' + delay + '">' +
+                '<img src="' + t.image + '" alt="' + t.name + '" loading="lazy" onerror="' + onerror + '">' +
+                '<div class="card-info">' +
+                    '<h3>' + t.name + '</h3>' +
+                    '<p>' + t.shortDesc + '</p>' +
+                    '<a href="candi.html?id=' + t.id + '" class="btn-explore" style="text-decoration:none;">' +
+                        'Jelajahi <span class="btn-arrow">→</span>' +
+                    '</a>' +
+                '</div>' +
+            '</div>';
+        }).join('');
+        if (window.reinitScrollAnim) window.reinitScrollAnim();
+    })();
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
